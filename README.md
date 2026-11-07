@@ -2,7 +2,11 @@
 
 Static site for **https://oldguardtech.ca**, served by GitHub Pages from `main` / root.
 
-- Plain HTML + one stylesheet (`assets/css/site.css`). No build step, no JavaScript, no cookies.
+- Plain HTML + one stylesheet (`assets/css/site.css`). No build step, no cookies.
+- The only JavaScript is the Cloudflare Web Analytics beacon (cookie-free page counts), at the end of each page.
+  The CSP allows exactly that: `script-src https://static.cloudflareinsights.com; connect-src https://cloudflareinsights.com`.
+  Dashboard: Cloudflare account jtysdal@oldguardtech.ca → Web analytics → oldguardtech.ca.
+- Google Search Console: domain property `oldguardtech.ca` (DNS TXT verification at DreamHost; don't delete that record).
 - Copy source of truth: the vault note `02-Projects/Marketing and Positioning/Website Copy.md`.
 - DNS lives at DreamHost (domain set to DNS Only): apex A/AAAA → GitHub Pages, `www` CNAME → `snogix.github.io`.
   Microsoft 365 mail records (MX, SPF, DKIM, autodiscover, DMARC) are also in that zone — leave them alone.
